@@ -1,3 +1,6 @@
+@import './mixin';
+@import './variables';
+
 *::before,
 *::after,
 * {
@@ -12,7 +15,6 @@ body {
    font-family: $fontRobotoMono;
    width: 100%;
    min-height: 100vh;
-   padding: 1rem 0.5rem;
 
    @include md-screen{
     background-color: $blackColor;
