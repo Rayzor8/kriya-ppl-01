@@ -1,0 +1,70 @@
+@import './utils/variables';
+@import './utils/mixin';
+
+section {
+   background-color: $yellowDark;
+   margin: 2rem 0;
+   color: $blackColor;
+   padding: 2rem 1rem;
+   border-radius: 5px;
+   cursor: pointer;
+
+   .card_header {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      align-items: center;
+
+      h2 {
+         font-size: 1.5rem;
+      }
+
+      p {
+         font-size: 1.3rem;
+      }
+
+      button {
+         @include addButton;
+         &:hover {
+            background-color: green;
+         }
+      }
+
+      @include md-screen {
+         gap: 1rem;
+      }
+   }
+
+   .card_body {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+
+      .confirm_btn {
+         @include confirmButton;
+         &:hover {
+            background-color: green;
+         }
+      }
+
+      .edit_btn {
+         @include editButton;
+         &:hover {
+            background-color: midnightblue;
+         }
+      }
+
+      .delete_btn {
+         @include removeButton;
+         &:hover {
+            background-color: darkred;
+         }
+      }
+
+      @include md-screen {
+         gap: 1rem;
+      }
+   }
+}

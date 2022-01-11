@@ -10,13 +10,14 @@
 }
 
 body {
-   background-color: $yellowDark;
+   background-color: $blackColor;
    color: white;
    font-family: $fontRobotoMono;
    width: 100%;
    min-height: 100vh;
 
-   @include md-screen{
-    background-color: $blackColor;
-   }
+}
+
+button{
+   cursor: pointer;
 }

@@ -1,4 +1,5 @@
 // media query mixin
+@import './variables';
 $breakpoints: (
    sm: 640px,
    md: 768px,
@@ -28,4 +29,38 @@ $breakpoints: (
    @media (min-width: map-get($breakpoints, 'xl')) {
       @content;
    }
+}
+
+@mixin btnInput {
+   padding: 8px 10px;
+   font-size: 15px;
+   font-weight: bold;
+   border-radius: 5px;
+   display: flex;
+   border: none;
+   transition: 200ms ease-in;
+}
+
+@mixin addButton {
+   background-color: $greenColor;
+   @include btnInput;
+   color: white;
+}
+
+@mixin confirmButton {
+   background-color: $greenColor;
+   @include btnInput;
+   color: white;
+}
+
+@mixin removeButton {
+   background-color: $redColor;
+   @include btnInput;
+   color: white;
+}
+
+@mixin editButton {
+   background-color: $purpleColor;
+   @include btnInput;
+   color: white;
 }
