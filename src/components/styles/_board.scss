@@ -40,25 +40,18 @@ section {
       }
    }
 
-   .card_body.show{
+   .card_body.show {
       display: flex;
       gap: 0.5rem;
       justify-content: center;
       align-items: center;
       margin-top: 2rem;
       transition: 300ms ease-in-out;
-      
+
       .confirm_btn {
          @include confirmButton;
          &:hover {
             background-color: green;
-         }
-      }
-
-      .edit_btn {
-         @include editButton;
-         &:hover {
-            background-color: midnightblue;
          }
       }
 
@@ -74,7 +67,37 @@ section {
       }
    }
 
-   .card_body.hidden{
+   .card_body.hidden {
       visibility: hidden;
+   }
+
+   .card_item {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+      transition: 300ms ease-in-out;
+
+      .title {
+         font-size: 1.3rem;
+      }
+      .edit_btn {
+         @include editButton;
+         &:hover {
+            background-color: midnightblue;
+         }
+      }
+
+      .delete_btn {
+         @include removeButton;
+         &:hover {
+            background-color: midnightblue;
+         }
+      }
+
+      @include md-screen {
+         gap: 1rem;
+      }
    }
 }

@@ -4,11 +4,11 @@ import './styles/_main_section.scss';
 import { useContextProgressBoard } from '../contexts/ProgressBoardContext';
 
 const MainSection = () => {
-   const { progresLists } = useContextProgressBoard();
+   const { progressLists } = useContextProgressBoard();
    return (
       <main>
-         {progresLists.map((el) => (
-            <Board key={el.id} name={el.name} id={el.id}/>
+         {progressLists.map((el) => (
+            <Board key={el.id} name={el.name} idBoard={el.id} data={el.data} />
          ))}
       </main>
    );

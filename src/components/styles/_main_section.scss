@@ -1,23 +1,21 @@
 @import './utils/mixin';
 
-main{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+main {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 1rem;
+   padding: 1rem;
 
-    @include md-screen{
-        padding: 2rem 3rem; 
-    }
+   @include md-screen {
+      padding: 2rem 3rem;
+   }
 
-    @include lg-screen{
-       flex-direction: row;
-       justify-content: flex-start;  
-       align-items: flex-start;    
-    }
-
-    @include xl-screen{
-        padding: 2rem 4rem;
-    }
+   @include xl-screen {
+      padding: 2rem 4rem;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+   }
 }
