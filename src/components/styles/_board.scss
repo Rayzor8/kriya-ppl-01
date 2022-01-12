@@ -8,6 +8,11 @@ section {
    padding: 2rem 1rem;
    border-radius: 5px;
    cursor: pointer;
+   width: 100%;
+   max-width: 500px;
+
+   display: flex;
+   flex-direction: column;
 
    .card_header {
       display: flex;
@@ -35,13 +40,14 @@ section {
       }
    }
 
-   .card_body {
+   .card_body.show{
       display: flex;
       gap: 0.5rem;
       justify-content: center;
       align-items: center;
       margin-top: 2rem;
-
+      transition: 300ms ease-in-out;
+      
       .confirm_btn {
          @include confirmButton;
          &:hover {
@@ -66,5 +72,9 @@ section {
       @include md-screen {
          gap: 1rem;
       }
+   }
+
+   .card_body.hidden{
+      visibility: hidden;
    }
 }

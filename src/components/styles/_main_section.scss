@@ -1,21 +1,23 @@
 @import './utils/mixin';
 
 main{
-    display: grid;
-    grid-template-columns: 1fr;
-    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 1rem;
 
     @include md-screen{
-        padding: 2rem 3rem;
+        padding: 2rem 3rem; 
     }
 
     @include lg-screen{
-        grid-template-columns: repeat(2, 1fr);
+       flex-direction: row;
+       justify-content: flex-start;  
+       align-items: flex-start;    
     }
 
     @include xl-screen{
-        grid-template-columns: repeat(3, 1fr);
         padding: 2rem 4rem;
     }
 }
