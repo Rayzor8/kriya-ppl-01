@@ -41,6 +41,7 @@ section {
    }
 
    .card_body.show {
+      margin-bottom: 1rem;
       display: flex;
       gap: 0.5rem;
       justify-content: center;
@@ -73,14 +74,30 @@ section {
 
    .card_item {
       display: flex;
-      gap: 0.5rem;
-      justify-content: center;
+      justify-content: flex-start;
+      padding: 0 1rem;
       align-items: center;
-      margin-top: 2rem;
+      margin-top: 0.5rem;
       transition: 300ms ease-in-out;
 
       .title {
-         font-size: 1.3rem;
+         font-size: 0.8rem;
+         font-weight: bold;
+         color: $blackColor;
+         padding: 0;
+         width: 80%;
+         word-wrap: break-word;
+
+         @include md-screen {
+            font-size: 1rem;
+         }
+      }
+
+      .card_item_btn {
+         display: flex;
+         justify-content: flex-end;
+         align-items: center;
+         gap: 10px;
       }
       .edit_btn {
          @include editButton;
@@ -98,6 +115,10 @@ section {
 
       @include md-screen {
          gap: 1rem;
+      }
+
+      li {
+         font-size: 0.1rem;
       }
    }
 }

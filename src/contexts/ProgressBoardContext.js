@@ -26,6 +26,7 @@ const ProgressBoardContext = ({ children }) => {
          data: [],
       },
    ]);
+
    return (
       <contextProgressBoard.Provider
          value={{ showInput, setShowInput, progressLists, setProgressLists }}
