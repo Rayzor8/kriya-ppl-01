@@ -1,7 +1,8 @@
 import { createContext, useContext, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-export const contextProgressBoard = createContext();
+import useLocalStorage from '../hooks/useLocalStorage';
 
+export const contextProgressBoard = createContext();
 export const useContextProgressBoard = () => {
    return useContext(contextProgressBoard);
 };
@@ -9,7 +10,7 @@ export const useContextProgressBoard = () => {
 const ProgressBoardContext = ({ children }) => {
    const [showInput, setShowInput] = useState(null);
 
-   const [progressLists, setProgressLists] = useState([
+   const [progressLists, setProgressLists] = useLocalStorage('progressBoard', [
       {
          id: uuidv4(),
          name: 'Todo',
@@ -27,9 +28,13 @@ const ProgressBoardContext = ({ children }) => {
       },
    ]);
 
+   const [formData, setFormData] = useState({ id: uuidv4(), name: '' });
+
+
+
    return (
       <contextProgressBoard.Provider
-         value={{ showInput, setShowInput, progressLists, setProgressLists }}
+         value={{ showInput, setShowInput, progressLists, setProgressLists,formData,setFormData }}
       >
          {children}
       </contextProgressBoard.Provider>

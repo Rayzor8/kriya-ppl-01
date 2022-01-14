@@ -14,7 +14,7 @@ section {
    display: flex;
    flex-direction: column;
 
-   .card_header {
+   .board_header {
       display: flex;
       gap: 0.5rem;
       justify-content: center;
@@ -40,7 +40,7 @@ section {
       }
    }
 
-   .card_body.show {
+   .board_body.show {
       margin-bottom: 1rem;
       display: flex;
       gap: 0.5rem;
@@ -48,6 +48,22 @@ section {
       align-items: center;
       margin-top: 2rem;
       transition: 300ms ease-in-out;
+
+      input[type='text'] {
+         border-radius: 5px;
+         width: 100%;
+         padding: 10px;
+         margin: 2px 0;
+         box-sizing: border-box;
+         border: 2px solid #ccc;
+         -webkit-transition: 0.5s;
+         transition: 0.5s;
+         outline: none;
+      }
+
+      input[type='text']:focus {
+         border: 2px solid $blackColor;
+      }
 
       .confirm_btn {
          @include confirmButton;
@@ -68,11 +84,11 @@ section {
       }
    }
 
-   .card_body.hidden {
+   .board_body.hidden {
       visibility: hidden;
    }
 
-   .card_item {
+   .board_item {
       display: flex;
       justify-content: flex-start;
       padding: 0 1rem;
@@ -93,7 +109,7 @@ section {
          }
       }
 
-      .card_item_btn {
+      .board_item_btn {
          display: flex;
          justify-content: flex-end;
          align-items: center;
