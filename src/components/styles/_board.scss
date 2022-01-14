@@ -5,7 +5,7 @@ section {
    background-color: $yellowDark;
    margin: 2rem 0;
    color: $blackColor;
-   padding: 2rem 1rem;
+   padding: 1rem;
    border-radius: 5px;
    cursor: pointer;
    width: 100%;
@@ -13,6 +13,12 @@ section {
 
    display: flex;
    flex-direction: column;
+
+   ul {
+      padding-top: 1rem;
+      display: flex;
+      flex-direction: column;
+   }
 
    .board_header {
       display: flex;
@@ -41,7 +47,6 @@ section {
    }
 
    .board_body.show {
-      margin-bottom: 1rem;
       display: flex;
       gap: 0.5rem;
       justify-content: center;
@@ -85,16 +90,27 @@ section {
    }
 
    .board_body.hidden {
+      transition: 100ms ease-in-out;
+      button,
+      input[type='text'] {
+         display: none;
+      }
+
       visibility: hidden;
    }
 
    .board_item {
+      background-color: white;
       display: flex;
       justify-content: flex-start;
-      padding: 0 1rem;
+      padding: 0.5rem 0.7rem;
       align-items: center;
       margin-top: 0.5rem;
       transition: 300ms ease-in-out;
+      border-radius: 8px;
+      &:hover {
+         background-color: azure;
+      }
 
       .title {
          font-size: 0.8rem;

@@ -3,7 +3,6 @@ import { FaEdit, FaTrash } from 'react-icons/fa';
 import { useContextProgressBoard } from '../contexts/ProgressBoardContext';
 
 const BoardItem = ({ el, idBoard, data }) => {
-    
    const { progressLists, setProgressLists, setFormData } =
       useContextProgressBoard();
 
@@ -37,8 +36,8 @@ const BoardItem = ({ el, idBoard, data }) => {
    };
 
    return (
-      <ul key={el.id} className="board_item">
-         <li className="title">
+      <li className="board_item">
+         <p className='title'>
             {checkString(el.name) ? (
                <a href={`https://${el.name}`} target="_blank" rel="noreferrer">
                   {el.name}
@@ -46,7 +45,8 @@ const BoardItem = ({ el, idBoard, data }) => {
             ) : (
                el.name
             )}
-         </li>
+         </p>
+
          <div className="board_item_btn">
             <button
                className="edit_btn"
@@ -63,7 +63,7 @@ const BoardItem = ({ el, idBoard, data }) => {
                {<FaTrash />}
             </button>
          </div>
-      </ul>
+      </li>
    );
 };
 

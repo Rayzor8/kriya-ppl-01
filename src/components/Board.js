@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './styles/_board.scss';
 import { FaPlus } from 'react-icons/fa';
 import { useContextProgressBoard } from '../contexts/ProgressBoardContext';
@@ -22,10 +22,16 @@ const Board = ({ name, idBoard, data }) => {
             </div>
 
             <FormInput idBoard={idBoard} handleShowInput={handleShowInput} />
-
-            {data.map((el) => (
-               <BoardItem key={el.id} el={el} idBoard={idBoard} data={data} />
-            ))}
+            <ul>
+               {data.map((el) => (
+                  <BoardItem
+                     key={el.id}
+                     el={el}
+                     idBoard={idBoard}
+                     data={data}
+                  />
+               ))}
+            </ul>
          </section>
       </React.Fragment>
    );
